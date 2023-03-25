@@ -6,13 +6,14 @@
     <div class="form-inputs">
       <%= f.input :name, autofocus: true, input_html: { class: "form-control" } %>
       <%= f.input :address, input_html: { class: "form-control" } %>
-      <%= f.input :rating, input_html: { class: "form-control" } %>
       <%= f.input :phone_number, input_html: { class: "form-control" } %>
+    <div class="form-inputs" id= "rating" style="margin-top: 16px"> <label for="rating" style="margin-bottom: .5rem">Rating</label>
+      <%= f.select :rating, [1, 2, 3, 4, 5], {}, { class: "form-control" } %>
     </div>
     <div class="form-inputs" id= "category" style="margin-top: 16px"> <label for="category" style="margin-bottom: .5rem">Category</label>
       <%= f.select :category, ["Chinese", "Italian", "Japanese", "French", "Belgian"], {}, { class: "form-control" } %>
     </div>
-    <div class="form-actions" style="margin-top: 16px">
+    <div class="form-actions" style="margin-top: 20px">
       <%= f.button :submit, class: "btn btn-primary" %>
     </div>
   <% end %>
