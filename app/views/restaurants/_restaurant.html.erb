@@ -30,8 +30,9 @@
       <ul class="list-group">
         <% @restaurant.reviews.each do |review| %>
         <li class="list-group-item" style="display: flex; justify-content: space-between">
-        <%= review.content %>
-        <small><%= link_to "Delete review", review_path(review), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></small> </li>
+          <%= review.content %>
+          <small> rating: <%= review.rating %></small>
+          <small><%= link_to "Delete review", review_path(review), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></small> </li>
         <% end %>
       </ul>
       <% if @restaurant.reviews.empty? %>
