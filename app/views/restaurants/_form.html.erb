@@ -1,15 +1,19 @@
+<div class="form-group">
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for(@restaurant) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :rating %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-inputs">
+      <%= f.input :name, autofocus: true, input_html: { class: "form-control" } %>
+      <%= f.input :address, input_html: { class: "form-control" } %>
+      <%= f.input :rating, input_html: { class: "form-control" } %>
+      <%= f.input :phone_number, input_html: { class: "form-control" } %>
+    </div>
+    <div class="form-inputs" id= "category" style="margin-top: 16px"> <label for="category" style="margin-bottom: .5rem">Category</label>
+      <%= f.select :category, ["Chinese", "Italian", "Japanese", "French", "Belgian"], {}, { class: "form-control" } %>
+    </div>
+    <div class="form-actions" style="margin-top: 16px">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

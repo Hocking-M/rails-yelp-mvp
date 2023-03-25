@@ -1,10 +1,22 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @restaurant %>
+<div class = "container" >
+  <div class = "row" >
+    <div class = "col-md-6 col-md-offset-3 col-sm-12" >
+      <p style="color: green"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
-  <%= link_to "Back to restaurants", restaurants_path %>
+        <%= render @restaurant %>
 
-  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
+        <div class="btn" style="margin-top: 10px" input type="button" >
+          <%=link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+        </div>
+        <div class="btn" style="margin-top: 10px" input type="button" >
+          <small>
+          <%= link_to "Edit restaurant", edit_restaurant_path(@restaurant) %> |
+          <%= link_to 'Delete restaurant', @restaurant, method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </small>
+          <br>
+          <small> <%= link_to "Back to restaurants", restaurants_path %> </small>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

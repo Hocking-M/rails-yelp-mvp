@@ -1,17 +1,41 @@
-<div id="<%= dom_id restaurant %>">
-  <p>
-    <strong>Name:</strong>
-    <%= restaurant.name %>
-  </p>
+<div class="container">
+  <div id="<%= dom_id restaurant %>">
+    <p>
+      <strong>Name:</strong>
+      <%= restaurant.name %>
+    </p>
 
-  <p>
-    <strong>Address:</strong>
-    <%= restaurant.address %>
-  </p>
+    <p>
+      <strong>Address:</strong>
+      <%= restaurant.address %>
+    </p>
 
-  <p>
-    <strong>Rating:</strong>
-    <%= restaurant.rating %>
-  </p>
+    <p>
+      <strong>Phone number:</strong>
+      <%= restaurant.phone_number %>
+    </p>
 
+    <p>
+      <strong>Category:</strong>
+      <%= restaurant.category %>
+    </p>
+
+
+    <p>
+      <strong>Rating:</strong>
+      <%= restaurant.rating %>
+    </p>
+
+    <p><strong>Reviews</strong></p>
+      <ul class="list-group">
+        <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item" style="display: flex; justify-content: space-between">
+        <%= review.content %>
+        <small><%= link_to "Delete review", review_path(review), method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></small> </li>
+        <% end %>
+      </ul>
+      <% if @restaurant.reviews.empty? %>
+          <li class="list-group-item">No reviews yet</li>
+        <% end %>
+  </div>
 </div>

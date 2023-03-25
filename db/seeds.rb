@@ -7,3 +7,18 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "cleaning database..."
+Restaurant.destroy_all
+
+puts "creating restaurants..."
+100.times do
+  Restaurant.create!(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    rating: rand(0..5),
+    category: ["chinese", "italian", "japanese", "french", "belgian"].sample
+  )
+  puts "created #{Restaurant.last.name}"
+end
+
+puts "done!"

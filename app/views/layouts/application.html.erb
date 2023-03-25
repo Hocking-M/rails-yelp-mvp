@@ -9,6 +9,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+  <div class="nav navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/restaurants">Yelp</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><%= link_to "Top Restaurants", top_restaurants_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "New Restaurant", new_restaurant_path, class: "nav-link" %></li>
+      </ul>
+    </div>
+  </div>
+
 
   <body>
     <%= yield %>

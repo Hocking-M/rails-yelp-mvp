@@ -1,22 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-md-offset-3">
-      <h1>Restaurants</h1>
-
-      <div id="restaurants">
+      <h1>Top 5 star restaurants</h1>
+      <ul>
         <% @restaurants.each do |restaurant| %>
           <div class="card">
             <div class="card-header">
               <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
             </div>
-            <div class="card-body">
-              <p><%= restaurant.address %></p>
-              <p>Rating: <%= restaurant.rating %></p>
-              <p><%= restaurant.category %></p>
-            </div>
-            <%end%>
           </div>
-      </div>
+        <% end %>
+      </ul>
     </div>
   </div>
-<p style="color: green"><%= notice %></p>
+</div>

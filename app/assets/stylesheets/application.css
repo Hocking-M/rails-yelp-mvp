@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+/* Path: app/assets/stylesheets/application.scss */
+
+.dropdown-menu {
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  margin-top: 0;
+  width: 100%;
+}
